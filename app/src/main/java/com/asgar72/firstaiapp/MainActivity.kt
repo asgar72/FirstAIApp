@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 // For text-only input, use the gemini-pro model
                 modelName = "gemini-pro",
                 // Access your API key as a Build Configuration variable (see "Set up your API key" above)
-                apiKey = "AIzaSyAnyR7hJ2K22FM4mJe9_VFo_m1x5m-zcbM"
+                apiKey = "your_api"
             )
             runBlocking {
                 val response = generativeModel.generateContent(prompt)
