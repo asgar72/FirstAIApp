@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
                 modelName = "gemini-pro",
                 // Access your API key as a Build Configuration variable (see "Set up your API key" above)
                 apiKey = "your_api"
+
             )
             runBlocking {
                 val response = generativeModel.generateContent(prompt)

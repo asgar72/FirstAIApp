@@ -1,44 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="10dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
         android:gravity="center"
-        android:textStyle="bold"
-        android:layout_margin="15dp"
-        android:text="Asgar's AI APP" />
+        android:text="Asgar's AI APP"
+        android:textSize="25dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/eTPrompt"
+    <LinearLayout
+        android:id="@+id/prompt_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Prompt"
-        android:inputType="text"/>
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Submit" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="500dp">
 
+            <EditText
+                android:id="@+id/eTPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:hint="Type Your Prompt ..."
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnSubmit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            app:cardBackgroundColor="#7b39ed"
+            app:cardCornerRadius="500dp">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/send_btn" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
     <TextView
         android:id="@+id/tVResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14dp"
-        android:text="Result Area" />
-
-
+        android:layout_margin="4dp"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"/>
 </LinearLayout>
