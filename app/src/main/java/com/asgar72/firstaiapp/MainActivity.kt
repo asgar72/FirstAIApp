@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 // For text-only input, use the gemini-pro model
                 modelName = "gemini-pro",
                 // Access your API key as a Build Configuration variable (see "Set up your API key" above)
-                apiKey = "your_api"
+               apiKey = "your_api"
 
             )
             runBlocking {
