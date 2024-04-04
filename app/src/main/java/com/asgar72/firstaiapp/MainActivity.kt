@@ -1,6 +1,7 @@
 package com.asgar72.firstaiapp
 
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.asgar72.firstaiapp.databinding.ActivityMainBinding
@@ -24,14 +25,21 @@ class MainActivity : AppCompatActivity() {
                 // For text-only input, use the gemini-pro model
                 modelName = "gemini-pro",
                 // Access your API key as a Build Configuration variable (see "Set up your API key" above)
-               apiKey = "your_api"
-
+                apiKey = "your_api"
             )
+
+            // Hide keyboard when the submit button is clicked
+            hideKeyboard()
+
             runBlocking {
                 val response = generativeModel.generateContent(prompt)
                 binding.tVResult.text = response.text
-
             }
         }
+    }
+
+    private fun hideKeyboard() {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.eTPrompt.windowToken, 0)
     }
 }
